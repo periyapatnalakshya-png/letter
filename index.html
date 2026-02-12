@@ -98,6 +98,7 @@ button {
 
 
 
+
 <div class="card">
   <h1>Will You Be My Valentine? 💘</h1>
   <p>You mean more to me than words can explain.</p>
@@ -114,6 +115,14 @@ function goToLetter() {
   window.location.href = "./letter.html";
 }
 
+const music = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playMusicBtn");
+
+playBtn.addEventListener("click", function() {
+  music.play();
+  playBtn.style.display = "none";
+});
+  
 // RUNAWAY NO BUTTON
 function moveButton() {
   const button = document.querySelector('.no-btn');
