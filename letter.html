@@ -136,18 +136,19 @@ Love you <3
 
     setInterval(createHeart, 500);
   </script>
-
-
-<script>
-  window.addEventListener("click", function() {
-    document.getElementById("bgMusic").play();
-  }, { once: true });
-</script>
-
+  
 <audio id="bgMusic" loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-  
+<script>
+  document.addEventListener("click", function () {
+    const music = document.getElementById("bgMusic");
+    music.play().catch(function(error) {
+      console.log("Autoplay blocked:", error);
+    });
+  }, { once: true });
+</script>
+ 
 </body>
 </html>
