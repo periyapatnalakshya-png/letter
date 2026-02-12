@@ -137,34 +137,35 @@ Love you <3
     setInterval(createHeart, 500);
   </script>
   
- <button id="playBtn" style="
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="playMusicBtn" style="
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 12px 20px;
-  background-color: #e63946;
+  background: #e63946;
   color: white;
   border: none;
   border-radius: 25px;
-  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
 ">
-  ▶ Play Our Song ❤️
+  ▶ Play Music ❤️
 </button>
 
-<audio id="bgMusic" loop>
-  <source src="letter/song.mp3">
-</audio>
 
 <script>
-  const btn = document.getElementById("playBtn");
-  const music = document.getElementById("bgMusic");
+ const music = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playMusicBtn");
 
-  btn.addEventListener("click", function() {
-    music.play();
-    btn.style.display = "none";
-  });
+playBtn.addEventListener("click", function() {
+  music.play();
+  playBtn.style.display = "none";
+});
+
 </script>
  
 </body>
