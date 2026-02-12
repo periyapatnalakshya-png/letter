@@ -76,10 +76,27 @@ button {
 </head>
 
 <body>
-
-<audio autoplay loop>
+  
+<audio id="bgMusic" loop>
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
+
+<button id="playMusicBtn" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 999;
+">
+  ▶ Play Music ❤️
+</button>
+
+
 
 <div class="card">
   <h1>Will You Be My Valentine? 💘</h1>
@@ -133,6 +150,14 @@ setInterval(() => {
 
   countdown.innerHTML = `Countdown to Valentine's Day: ${days} days ${hours} hrs 💕`;
 }, 1000);
+
+const music = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playMusicBtn");
+
+playBtn.addEventListener("click", function() {
+  music.play();
+  playBtn.style.display = "none";
+});
 
 </script>
 
